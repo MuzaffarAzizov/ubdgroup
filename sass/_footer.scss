@@ -1,0 +1,57 @@
+@use './header';
+$fontFirst: 'Inter', sans-serif;
+$fontSecond: 'Raleway', sans-serif;
+@mixin h6 {
+  font-family: $fontSecond;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #fb4a7b;
+}
+footer {
+  text-align: right;
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2%;
+    margin: 0 5%;
+    @media (max-width: 500px) {
+      flex-wrap: wrap;
+      margin: 5%;
+    }
+    li {
+      list-style-type: disc;
+      @media (max-width: 900px) {
+        list-style: none;
+      }
+      @media (max-width: 500px) {
+        margin: 2%;
+      }
+      a {
+        @include header.a;
+        font-family: 'Raleway';
+        font-weight: 500;
+      }
+    }
+  }
+  .footer__icon {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2% 5%;
+    align-items: center;
+    gap: 2%;
+    @media (max-width: 500px) {
+      display: block;
+    }
+    h6 {
+      @include h6;
+    }
+    img {
+      @media (max-width: 500px) {
+        margin: 5% 2%;
+      }
+    }
+  }
+}
